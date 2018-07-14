@@ -1,0 +1,63 @@
+<@_fruitBase id=id!copyId><#assign map=object/></@_fruitBase>
+<script type="text/javascript">
+function clickAddTag(){
+	$('.tags .button .buttonActive',navTab.getCurrentPanel()).click();
+}
+</script>
+<form method="post" action="cmsFruitBase/save.do?callbackType=closeCurrent&navTabId=cmsMap/fruitList" class="pageForm required-validate" onsubmit="clickAddTag(); return validateCallback(this,navTabAjaxDone);">
+	<input name="id" type="hidden" value="${id!}" />
+	<div class="formBar">
+		<ul>
+			<li><button type="submit" class="buttonActive">保存</button></li>
+			<li><button type="button" class="button close">关闭</button></li>
+		</ul>
+	</div>
+	<div class="tabs">
+		<div class="tabsHeader">
+	        <div class="tabsHeaderContent">
+	            <ul>
+					<li><a href="javascript:;">基础信息</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	    <div class="tabsContent unitBox">
+			<div class="pageFormContent" layoutH="96">
+				<dl class="nowrap">
+					<dt>水果基地名称:</dt>
+					<dd>
+						<input class="required" name="title" type="text" maxlength="255" size="60" value="${(map.title)!}"/>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>联系方式:</dt>
+					<dd>
+						<input class="required" name="contact" type="text" maxlength="255" size="45" value="${(map.contact)!}"/>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>地址:</dt>
+					<dd>
+						<input class="required" name="address" type="text" maxlength="255" size="80" value="${(map.address)!}"/>
+					</dd>
+				</dl>
+				<#include "../include_page/tags.html"/>
+				<dl id="publishDate" style="display:none">
+					<dt>发布日期:</dt>
+					<dd>
+						<input class="date" name="create_date" type="text" size="20" dateFmt="yyyy-MM-dd HH:mm:ss" value="${(map.create_date)!}"/>
+						<a class="inputDateButton" href="javascript:;">选择</a>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>封面:</dt>
+					<dd>
+						<input name="cover" value="${(map.cover)!}" maxlength="300" size="50" type="text"/>
+						<a class="btnAttach" href="common/upload.html?field=cover&onlyImage=true" lookupGroup="" width="560" height="300">图片</a>
+						<#include "../include_page/preview.html"/>
+					</dd>
+				</dl>
+			<#include "../include_page/extendData.html"/>
+			</div>
+		</div>
+	</div>
+</form>

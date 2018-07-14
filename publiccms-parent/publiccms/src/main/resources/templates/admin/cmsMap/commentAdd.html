@@ -1,0 +1,48 @@
+<@_comment id=id!copyId><#assign comment=object/></@_comment>
+<script type="text/javascript">
+function clickAddTag(){
+	$('.tags .button',navTab.getCurrentPanel()).click();
+}
+</script>
+<form method="post" action="cmsMap/save.do?callbackType=closeCurrent&navTabId=cmsMap/list" class="pageForm required-validate" onsubmit="clickAddTag(); return validateCallback(this,navTabAjaxDone);">
+	<input name="id" type="hidden" value="${id!}" />
+	<div class="formBar">
+		<ul>
+			<!--<li><button type="submit" class="buttonActive">保存</button></li>-->
+			<li><button type="button" class="button close">关闭</button></li>
+		</ul>
+	</div>
+	<div class="tabs">
+		<div class="tabsHeader">
+	        <div class="tabsHeaderContent">
+	            <ul>
+					<li><a href="javascript:;">基础信息</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	    <div class="tabsContent unitBox">
+			<div class="pageFormContent" layoutH="96">
+				<dl class="nowrap">
+					<dt>用户名:</dt>
+					<dd>
+						<input  name="username" type="text" readonly maxlength="255" size="60" value="${(comment.username)!}"/>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>联系方式:</dt>
+					<dd>
+						<input  name="email" type="text" readonly maxlength="255" size="45" value="${(comment.email)!}"/>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>留言内容:</dt>
+					<dd>
+						<textarea name="content" readonly maxlength="300" style="width: 100%;" rows="5">${(comment.content)!}</textarea>
+					</dd>
+				</dl>
+				
+			<#include "../include_page/extendData.html"/>
+			</div>
+		</div>
+	</div>
+</form>

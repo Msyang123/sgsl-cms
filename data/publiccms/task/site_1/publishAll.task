@@ -1,0 +1,3 @@
+<@include path="publishContent.task"/>
+<@include path="publishCategory.task"/>
+<@include path="publishPage.task"/>

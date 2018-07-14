@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>${metadata.alias!}</title>
+	<@_includePlace path="/index.html/3f9a648b-7360-41b5-86e5-6b4b108268f1.html"/> <#-- 头部Header -->
+</head>
+<body>
+<@_includePlace path="/index.html/2ecdebcc-c087-4ed3-aecd-80f85ce6a6c6.html"/> <#-- 导航 -->
+<main>
+    <div class="container">
+		<div class="data-list left-content">
+			<h3>下载链接</h3>
+			<@_placeList path='/index.html/c6ae8ea8-103d-4c93-8ff2-79d67a38b3ae.html'>
+				<#list page.list as a>
+					<p><a href="${site.dynamicPath}place/redirect.do?id=${a.id!}" target="_blank">${a.title}</a></p>
+				</#list>
+			</@_placeList>
+			<h3>源码托管</h3>
+			<@_placeList path='/index.html/895b6167-c2ce-43ad-b936-b1a10cd1ad5d.html'>
+				<#list page.list as a>
+					<p><a href="${site.dynamicPath}place/redirect.do?id=${a.id!}" target="_blank">${a.title}</a></p>
+				</#list>
+			</@_placeList>
+		</div>
+		<aside>
+            <@_includePlace path="/index.html/2ac8682d-d844-4d95-921d-8c92b89e515c.html"/> <#-- 开源中国 -->
+		</aside>
+    </div>
+	<div class="clearfix-before"></div>
+</main>
+<@_includePlace path="/index.html/6369e868-50b9-4245-9d39-fd440384a685.html"/> <#-- 尾部Footer -->
+<script>
+	$("header nav ul li a:contains('下载')").parent().addClass('selected');
+</script>
+</body>
+</html>
