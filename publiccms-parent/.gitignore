@@ -1,0 +1,14 @@
+*.iml
+.project
+.classpath
+.springBeans
+.factorypath
+.apt_generated
+.idea
+.settings/
+/*/target/
+logs/
+target/
+logs/
+/hs_err_pid4164.log
+/hs_err_pid8668.log

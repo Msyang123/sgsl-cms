@@ -1,0 +1,66 @@
+<@_attractInvestment id=id!copyId><#assign attractInvestment=object/></@_attractInvestment>
+<script type="text/javascript">
+function clickAddTag(){
+	$('.tags .button',navTab.getCurrentPanel()).click();
+}
+</script>
+<form method="post" action="cmsMap/save.do?callbackType=closeCurrent&navTabId=cmsMap/list" class="pageForm required-validate" onsubmit="clickAddTag(); return validateCallback(this,navTabAjaxDone);">
+	<input name="id" type="hidden" value="${id!}" />
+	<div class="formBar">
+		<ul>
+			<!--<li><button type="submit" class="buttonActive">保存</button></li>-->
+			<li><button type="button" class="button close">关闭</button></li>
+		</ul>
+	</div>
+	<div class="tabs">
+		<div class="tabsHeader">
+	        <div class="tabsHeaderContent">
+	            <ul>
+					<li><a href="javascript:;">招商加盟申请信息</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	    <div class="tabsContent unitBox">
+			<div class="pageFormContent" layoutH="96">
+				<dl class="nowrap">
+					<dt>姓名:</dt>
+					<dd>
+						<input  name="username" type="text" readonly maxlength="255" size="60" value="${(attractInvestment.username)!}"/>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>电话:</dt>
+					<dd>
+						<input  name="phone" type="text" readonly maxlength="255" size="45" value="${(attractInvestment.phone)!}"/>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>意向地区:</dt>
+					<dd>
+						<input  name="place" type="text" readonly maxlength="255" size="45" value="${(attractInvestment.place)!}"/>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>投资额度:</dt>
+					<dd>
+						<input  name="amount" type="text" readonly maxlength="255" size="45" value="${(attractInvestment.amount)!}"/>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>创建时间:</dt>
+					<dd>
+						<input  name="create_date" type="text" readonly maxlength="255" size="45" value="${(attractInvestment.create_date)!}"/>
+					</dd>
+				</dl>
+				<dl class="nowrap">
+					<dt>留言内容:</dt>
+					<dd>
+						<textarea name="content" readonly maxlength="300" style="width: 100%;" rows="5">${(attractInvestment.content)!}</textarea>
+					</dd>
+				</dl>
+				
+			<#include "../include_page/extendData.html"/>
+			</div>
+		</div>
+	</div>
+</form>
