@@ -1,0 +1,64 @@
+<@_attractInvestmentList advanced=true username=username pageIndex=pageNum count=numPerPage>
+<div class="pageHeader">
+	<form id="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+		<#include "../include_page/paramters.html"/>
+		<div class="searchBar">
+			<ul class="searchContent">
+				<li>
+					<label>姓名:</label>
+					<input type="text" size="20" name="username" value="${username!}" />
+				</li>
+			</ul>
+			<div class="subBar">
+				<ul>
+					<li>
+						<button type="submit" class="buttonActive">搜索</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="pageContent">
+	<!--  <div class="panelBar">
+		<ul class="toolBar">
+			<li><a href="cmsMap/add.html" target="navTab" rel="sysSite/add"><i class="icon-plus-sign-alt icon-large"></i> 添加门店信息</a></li>
+		</ul>
+	</div>-->
+
+	<table class="list" width="100%" layoutH="99" >
+		<thead>
+			<tr>
+				<th width="30">ID</th>
+				<th width="80" height="30">姓名</th>
+				<th width="80" height="30">手机号码</th>
+				<th width="100" height="30">意向地区</th>
+				<th width="80" height="30">投资额度</th>
+				<th width="120" height="30">提交时间</th>
+				<th>内容</th>
+				<th width="200" height="30">操作</th>
+			</tr>
+		</thead>
+		<tbody id="tr">
+		<#list page.list as a>
+			 <tr>
+
+				<td>${a.id}</td>
+				<td>${a.username}</td>
+				<td>${a.phone}</td>
+				<td>${a.place}</td>
+				<td>${a.amount}</td>
+				<td>${a.create_date}</td>
+				<td>${a.content}</td>
+				<td>
+					<a href="cmsMap/attractInvestmentAdd.html?id=${a.id}" target="navTab" rel="cmsMap/edit" title="查看详情">查看详情</a>
+					<a href="cmsAttractInvestment/delete.do?ids=${a.id}" title="确定要删除这条记录么?" target="ajaxTodo">删除</a>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+
+	<#include "../include_page/page.html"/>
+</div>
+</@_attractInvestmentList>
