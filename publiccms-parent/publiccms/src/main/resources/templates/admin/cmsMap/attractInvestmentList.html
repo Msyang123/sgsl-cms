@@ -31,23 +31,26 @@
 			<tr>
 				<th width="30">ID</th>
 				<th width="80" height="30">姓名</th>
+				<th width="80" height="30">性别</th>
 				<th width="80" height="30">手机号码</th>
 				<th width="100" height="30">意向地区</th>
 				<th width="80" height="30">投资额度</th>
-				<th width="120" height="30">提交时间</th>
+				<th width="120" height="30">是否带有店铺</th>
+				<th width="140" height="30">提交时间</th>
 				<th>内容</th>
 				<th width="200" height="30">操作</th>
 			</tr>
 		</thead>
 		<tbody id="tr">
 		<#list page.list as a>
-			 <tr>
 
 				<td>${a.id}</td>
 				<td>${a.username}</td>
+				<td>${a.sex}</td>
 				<td>${a.phone}</td>
 				<td>${a.place}</td>
 				<td>${a.amount}</td>
+				<td>${a.has_store}</td>
 				<td>${a.create_date}</td>
 				<td>${a.content}</td>
 				<td>
