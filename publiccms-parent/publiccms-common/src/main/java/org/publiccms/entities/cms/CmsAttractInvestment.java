@@ -22,6 +22,8 @@ public class CmsAttractInvestment implements java.io.Serializable {
     private Integer id;
     @GeneratorColumn(title = "姓名")
     private String username;
+    @GeneratorColumn(title = "性别")
+    private String sex;
     @GeneratorColumn(title = "电话")
     private String phone;
     @GeneratorColumn(title = "意向地区")
@@ -30,18 +32,22 @@ public class CmsAttractInvestment implements java.io.Serializable {
     private String amount;
     @GeneratorColumn(title = "留言内容")
     private String content;
+    @GeneratorColumn(title = "是否有店铺")
+    private String has_store;
     @GeneratorColumn(title = "留言日期")
     private String create_date;
 
     public CmsAttractInvestment() {
     }
 
-    public CmsAttractInvestment(String username, String content, String phone, String place, String amount, String create_date) {
+    public CmsAttractInvestment(String username, String sex,String content, String phone, String place, String amount, String has_store,String create_date) {
         this.username = username;
+        this.sex = sex;
         this.content = content;
         this.phone = phone;
         this.place = place;
         this.amount = amount;
+        this.has_store = has_store;
         this.create_date = create_date;
     }
 
@@ -109,5 +115,21 @@ public class CmsAttractInvestment implements java.io.Serializable {
 
     public void setAmount(String amount) {
         this.amount = amount;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getHas_store() {
+        return has_store;
+    }
+
+    public void setHas_store(String has_store) {
+        this.has_store = has_store;
     }
 }
