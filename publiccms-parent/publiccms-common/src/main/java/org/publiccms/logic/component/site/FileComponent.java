@@ -165,8 +165,8 @@ public class FileComponent implements Base {
         File dest = new File(fileName);
         dest.getParentFile().mkdirs();
         file.transferTo(dest);
-        dest.setReadable(true, false);
-        dest.setWritable(true, false);
+        /*dest.setReadable(true, false);
+        dest.setWritable(true, false);*/
         return dest.getName();
     }
 

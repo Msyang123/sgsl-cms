@@ -29,9 +29,9 @@ public class SendmailUtil {
 	private static String KEY_PROPS = "mail.smtp.auth";
 	// private static boolean VALUE_PROPS = true;
 	// 发件人用户名、密码
-	private String SEND_USER = "562461297@qq.com";
-	private String SEND_UNAME = "562461297@qq.com";
-	private String SEND_PWD = "ekpdowkexnkubeec";
+	private String SEND_USER = "343048470@qq.com";
+	private String SEND_UNAME = "343048470@qq.com";
+	private String SEND_PWD = "smwqyuvhmcedbhgd";
 	// 建立会话
 	private MimeMessage message;
 	private Session s;

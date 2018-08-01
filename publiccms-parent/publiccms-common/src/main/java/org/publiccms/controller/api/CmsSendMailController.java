@@ -1,19 +1,7 @@
-package org.publiccms.controller.admin.cms;
+package org.publiccms.controller.api;
 
 
-
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.publiccms.common.base.AbstractController;
 import org.publiccms.common.tools.SendmailUtil;
 import org.publiccms.logic.component.template.TemplateComponent;
@@ -22,11 +10,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
- 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -52,7 +45,7 @@ public class CmsSendMailController extends AbstractController {
   
     
     @RequestMapping("sendMail")
-    public void sendMail(String pageId, HttpServletRequest request,@ModelAttribute("pojo") Pojo pojo,HttpServletResponse resp) throws IOException{
+    public void sendMail(String pageId, HttpServletRequest request, @ModelAttribute("pojo") Pojo pojo, HttpServletResponse resp) throws IOException{
 		SendmailUtil se = new SendmailUtil(request.getSession().getServletContext().getRealPath("/"));
 		// receptAddress 可以是多人
 		String[] receptAddress = { "343048470@qq.com" };
@@ -94,7 +87,8 @@ public class CmsSendMailController extends AbstractController {
     
 
 }
-class Pojo{  
+
+class Pojo{
     private List<MultipartFile> file = new ArrayList<MultipartFile>();
 
 	public List<MultipartFile> getFile() {
