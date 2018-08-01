@@ -13,7 +13,7 @@ import java.io.IOException;
 
 /**
  *
- * CmsMapListDirective
+ * CmsAttractInvestmentListDirective
  * 
  */
 @Component

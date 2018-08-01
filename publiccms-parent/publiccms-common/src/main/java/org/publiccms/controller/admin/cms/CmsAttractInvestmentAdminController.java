@@ -51,7 +51,7 @@ public class CmsAttractInvestmentAdminController extends AbstractController {
     @ResponseBody
     public String save(CmsAttractInvestment entity,HttpServletRequest request, HttpSession session, ModelMap model) {
     	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-    	entity.setCreate_date(df.format(new Date()));
+    	entity.setCreateDate(df.format(new Date()));
         if(null!=entity.getId()){
             entity = service.update(entity.getId(), entity);
         }else{

@@ -32,7 +32,7 @@
 				<th width="30">ID</th>
 				<th width="80" height="30">姓名</th>
 				<th width="80" height="30">性别</th>
-				<th width="80" height="30">手机号码</th>
+				<th width="100" height="30">手机号码</th>
 				<th width="100" height="30">意向地区</th>
 				<th width="80" height="30">投资额度</th>
 				<th width="120" height="30">是否带有店铺</th>
@@ -43,16 +43,16 @@
 		</thead>
 		<tbody id="tr">
 		<#list page.list as a>
-
-				<td>${a.id}</td>
-				<td>${a.username}</td>
-				<td>${a.sex}</td>
-				<td>${a.phone}</td>
-				<td>${a.place}</td>
-				<td>${a.amount}</td>
-				<td>${a.has_store}</td>
-				<td>${a.create_date}</td>
-				<td>${a.content}</td>
+			<tr>
+				<td>${(a.id)!}</td>
+				<td>${(a.username)!}</td>
+				<td>${(a.sex)!}</td>
+				<td>${(a.phone)!}</td>
+				<td>${(a.place)!}</td>
+				<td>${(a.amount)!}</td>
+				<td>${(a.hasStore)!}</td>
+				<td>${(a.createDate)!}</td>
+				<td>${(a.content)!}</td>
 				<td>
 					<a href="cmsMap/attractInvestmentAdd.html?id=${a.id}" target="navTab" rel="cmsMap/edit" title="查看详情">查看详情</a>
 					<a href="cmsAttractInvestment/delete.do?ids=${a.id}" title="确定要删除这条记录么?" target="ajaxTodo">删除</a>
