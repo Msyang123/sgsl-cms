@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * CmsDao
+ * CmsAttractInvestmentDao
  * 
  */
 @Repository
